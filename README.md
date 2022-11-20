@@ -1,7 +1,11 @@
 # microservices-demo
 How I implemented the sample cloud-native application with 11 microservices showcasing Kubernetes and managed by helm. Original repo; https://github.com/GoogleCloudPlatform/microservices-demo
 
-
+Must have for this to run; minikube, kubectl, docker, helm, helmfile. Then following these steps;
+  - Fork the repo
+  - Clone the repo into you local machine
+  - cd into the directory
+  - Run the command; ```helmfile sync```
 ## Table of contents
 <!-- TOC -->
 * [A journey into microservice](#a-journey-into-microservices)
@@ -38,8 +42,8 @@ It is assume that this demo is for learning purpose, so best production and secu
 ## Demo
 If you want to follow along this demo, fork the repo. Clone the repo into your local machine. Change into the directory where it was clone to.
 
-[Prepare kubernetes environment and get helm install] 
-  - Set up minikube on your machine and get helm install. 
+[Prepare kubernetes environment and get helm install](#prepare-k8s-env-and-get-helm-install)
+  - Set up minikube on your machine and get helm, helmfile install. 
   - Pretty simple process; check out the steps from official doc at https://kubernetes.io/docs/tasks/tools/ and https://helm.sh/docs/intro/install/
 
 [Create a common chart for 10 microservices](#create-a-common-chart-for-10-microservices)
@@ -66,7 +70,13 @@ If you want to follow along this demo, fork the repo. Clone the repo into your l
 
 [Deploy microservices to kubernetes with helmfile](#deploy-microservices-to-kubernetes-with-helmfile)
   - Alternative to helmfile is to individually install microservices by running the command; ```helm install -f file.yaml release_name chart_name``` for each services. Imagine doing this for hundred of services, not practical right.
+  - Create helmfile.yaml which define the releases for all the microservices.
   - First install helmfile into the machine, I am using macOS, so I ran; ```brew install helmfile```
+  - Then run the command; ```helmfile sync``` the result should be similar to image below
+  ![helmfile_result](docs/helmfile_result.png)
+  - Check with kubectl if all the pods are created, running with ```kubectl get pod```
+  ![check_with_kubectl](docs/check_with_kubectl.png)
+
 
 
 ![online_boutique-landing](docs/boutique-app-1.png)
