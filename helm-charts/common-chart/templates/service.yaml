@@ -4,9 +4,9 @@ metadata:
   name: {{ .Values.appName }}
 spec:
   type: {{ .Values.serviceType }}
-  ports:
-    - port: {{ .Values.servicePort }}
-      targetPort: {{ .Values.containerPort }}
-      protocol: TCP
   selector:
     app: {{ .Values.appName }}
+  ports:
+  - protocol: TCP
+    port: {{ .Values.servicePort }}
+    targetPort: {{ .Values.containerPort }}

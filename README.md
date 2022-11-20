@@ -13,7 +13,7 @@ How I implemented the sample cloud-native application with 11 microservices show
     * [Create a common chart for 10 microservices](#create-a-common-chart-for-10-microservices)
     * [Set default and actual value for each microservices](#set-value-for-each-microservices)
     * [Create redis helm chart](#create-redis-helm-chart)
-    * [Deploy microservice to kubernetes with helmfile](#deploy-microservice-to-kubernetes-with-helmfile)
+    * [Deploy microservices to kubernetes with helmfile](#deploy-microservices-to-kubernetes-with-helmfile)
   * [Lesson Learnt](#Lessons)
 <!-- TOC -->
 
@@ -23,7 +23,7 @@ How I implemented the sample cloud-native application with 11 microservices show
 How can I deploy and manage existing microservices in a kubernetes cluster?
 
 ## Solution
-![architecture_design](docs/design.svg)
+![architecture_design](docs/architecture-diagram.png)
 The diagram describes my solution in picture:
 
 ## Project requirements
@@ -55,12 +55,19 @@ If you want to follow along this demo, fork the repo. Clone the repo into your l
 [Set default and actual value for each microservices](#set-value-for-each-microservices)
 
   - Need to validate if all the values define is correct up till this point.
-  Run the command; ```helm template -f email-service-value.yaml common-chart``` & ```helm lint -f email-service-value.yaml common-chart```
+  Run the command; ```helm template -f email-service-values.yaml common-chart``` & ```helm lint -f email-service-value.yaml common-chart```
   - Then, deploy one of the service to check if this work.
   Run the command; ```helm install common-chart ./helm-charts/common-chart/``` & ```helm list```
 
 [Create redis helm chart](#create-redis-helm-chart)
+  - Same process as when creating common charts but this time for just redis. Run the command; ```helm create redis```
+  - Put this redis chart and common chart under same folder - helm-charts
 
-[Deploy microservice to kubernetes with helmfile](#deploy-microservice-to-kubernetes-with-helmfile)
+[Deploy microservices to kubernetes with helmfile](#deploy-microservices-to-kubernetes-with-helmfile)
+  - Alternative to helmfile is to individually install microservices by running the command; ```helm install -f file.yaml release_name chart_name``` for each services. Imagine doing this for hundred of services, not practical right.
+  - First install helmfile into the machine, I am using macOS, so I ran; ```brew install helmfile```
 
+
+![online_boutique-landing](docs/boutique-app-1.png)
+![online_boutique-2](docs/boutique-app-2.png)
 ## Lesson Learnt
