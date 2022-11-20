@@ -6,6 +6,10 @@ Must have for this to run; minikube, kubectl, docker, helm, helmfile. Then follo
   - Clone the repo into you local machine
   - cd into the directory
   - Run the command; ```helmfile sync```
+  - Check if all the service were deploy correctly, run the command; ```kubectl get pod```
+  - Get the url address, run the command; ```kubectl get svc```
+  - Copy and paste the address on the browser. Voila!!!
+
 ## Table of contents
 <!-- TOC -->
 * [A journey into microservice](#a-journey-into-microservices)
@@ -76,9 +80,15 @@ If you want to follow along this demo, fork the repo. Clone the repo into your l
   ![helmfile_result](docs/helmfile_result.png)
   - Check with kubectl if all the pods are created, running with ```kubectl get pod```
   ![check_with_kubectl](docs/check_with_kubectl.png)
-
-
+  - Then check the application on the browser through frontend service which serve as entry point
+  - By runnning ```kubectl get svc``` to get the address expose externally. Remember I use NodePort as serviceType.
+  - Copy and paste the address on the browser. It should display similar image below if all things went well
 
 ![online_boutique-landing](docs/boutique-app-1.png)
 ![online_boutique-2](docs/boutique-app-2.png)
+
 ## Lesson Learnt
+  - Helm makes managing microservices more ease, smooth and time-saving
+  - One will appreciate helm better if you had previously creating multiple deployment manifest for kubernetes cluster manually
+  - Alternative to helm is carvel ytt, more of programmatic approach to packaging and managing microservices
+  - There is no one-fit-all kind of solution to problems. It just use case understanding
