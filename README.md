@@ -17,14 +17,14 @@ How I implemented the sample cloud-native application with 11 microservices show
   * [Lesson Learnt](#Lessons)
 <!-- TOC -->
 
-## Problem Statements: Problem Statements
+## Problem Statements
 
 [Problem Statements](problems): Problem Statements
 How can I deploy and manage existing microservices in a kubernetes cluster?
 
 ## Solution
 ![architecture_design](docs/architecture-diagram.png)
-The diagram describes my solution in picture:
+The diagram describes my solution in picture as shared in the original repo.
 
 ## Project requirements
 It is assume that this demo is for learning purpose, so best production and security practices are not fully considered:
@@ -37,7 +37,8 @@ It is assume that this demo is for learning purpose, so best production and secu
 
 ## Demo
 If you want to follow along this demo, fork the repo. Clone the repo into your local machine. Change into the directory where it was clone to.
-[Prepare kubernetes environment and get helm install](#prepare-k8s-env-and-get-helm-install)
+
+[Prepare kubernetes environment and get helm install] 
   - Set up minikube on your machine and get helm install. 
   - Pretty simple process; check out the steps from official doc at https://kubernetes.io/docs/tasks/tools/ and https://helm.sh/docs/intro/install/
 
