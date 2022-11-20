@@ -46,9 +46,9 @@ It is assume that this demo is for learning purpose, so best production and secu
 [Set default and actual value for each microservices](#set-value-for-each-microservices)
 
   - Need to validate if all the values define is correct up till this point
-  Run the command; helm template -f email-service-value.yaml common-chart & helm lint -f email-service-value.yaml common-chart
+  Run the command; ```helm template -f email-service-value.yaml common-chart``` & ```helm lint -f email-service-value.yaml common-chart```
   - Then, deploy one of the service to check if this work
-  Run the command; helm install common-chart ./helm-charts/common-chart/ & helm list
+  Run the command; ```helm install common-chart ./helm-charts/common-chart/``` & ```helm list```
 [Create redis helm chart](#create-redis-helm-chart)
 [Deploy microservice to kubernetes with helmfile](#deploy-microservice-to-kubernetes-with-helmfile)
 
