@@ -7,8 +7,9 @@ Must have for this to run; minikube, kubectl, docker, helm, helmfile. Then follo
   - cd into the directory
   - Run the command; ```helmfile sync```
   - Check if all the service were deploy correctly, run the command; ```kubectl get pod```
-  - Get the url address, run the command; ```kubectl get svc```
-  - Copy and paste the address on the browser. Voila!!!
+  - Get the url address, first run the command; ```kubectl get svc```
+  - Copy the frontendservice name, then run the command; ```minikube service frontendservice```
+  - Copy and paste the url address on the browser. Voila!!!
 
 ## Table of contents
 <!-- TOC -->
@@ -82,7 +83,8 @@ If you want to follow along this demo, fork the repo. Clone the repo into your l
   ![check_with_kubectl](docs/check_with_kubectl.png)
   - Then check the application on the browser through frontend service which serve as entry point
   - By runnning ```kubectl get svc``` to get the address expose externally. Remember I use NodePort as serviceType.
-  - Copy and paste the address on the browser. It should display similar image below if all things went well
+  - I copied the frontendservice name, then run the command; ```minikube service frontendservice```
+  - Then again copy and paste the address on the browser. It should display similar image below if all things went well
 
 ![online_boutique-landing](docs/boutique-app-1.png)
 ![online_boutique-2](docs/boutique-app-2.png)
